@@ -33,6 +33,21 @@
 
 # 請輸入字串:AA00+-*/
 # 總累加分數:36
-# -------------------------------------------------------------------------------------
-
+s = input('請輸入字串: ')
+cnt_num = 0
+cnt_word = 0
+cnt_oper_1 = 0
+cnt_oper_2 = 0
+for i in s:
+    convert = ord(i)
+    if convert >= 65 and convert <= 90:
+        cnt_word += 1
+    elif convert >= 48 and convert <= 57:
+        cnt_num += 1
+    elif convert == 43 or convert == 45:
+        cnt_oper_1 += 1
+    else:
+        cnt_oper_2 += 1
+result = cnt_num + cnt_word * 2 + cnt_oper_1 * 5 + cnt_oper_2 * 10
+print('總累加分數: ', result)
 # -------------------------------------------------------------------------------------

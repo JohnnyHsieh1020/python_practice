@@ -15,7 +15,10 @@ response = input('學生答案： ')
 result = ''
 count = 0
 for i in range(len(correct_ans)):
-    if correct_ans[i] == 'E':
+    
+    if response[i] == correct_ans[i]:
+        result += '.'
+    elif correct_ans[i] == 'E':
         if response[i] == 'A' or response[i] == 'B':
             result += '.'
         else:
@@ -27,8 +30,6 @@ for i in range(len(correct_ans)):
         else:
             count += 1
             result += '*'
-    elif response[i] == correct_ans[i]:
-        result += '.'
     else:
         count += 1
         result += '*'
